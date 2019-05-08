@@ -35,19 +35,19 @@ manpacker --ci development.ic.js
 ```
 # Install
 ```
-npm i @manpacker/frontend -D
+npm i @manpacker/generator -D
 ```
 # Usage
 ## API
 ```
-const manpacker = require('@manpacker/frontend')
+const manpacker = require('@manpacker/generator')
 
 ```
 ### method
 #### .compile
 Core compilation method
 ```
-const { compile } = require('@manpacker/frontend')
+const { compile } = require('@manpacker/generator')
 compile({ env, ic, config })
 ```
 
@@ -60,7 +60,7 @@ compile({ env, ic, config })
 #### .Commander
 Commander is Create command-line class.
 ```
-const { Commander } = require('@manpacker/frontend')
+const { Commander } = require('@manpacker/generator')
 
 let { version } = require('./package.json')
 let commander = new Commander({ version })
@@ -75,7 +75,7 @@ Explain commander methods
 #### .createCssLoader
 Create css loader generator.
 ```
-const { createCssLoader } = require('@manpacker/frontend')
+const { createCssLoader } = require('@manpacker/generator')
 ```
 |param|type|explain|
 |-----|----|-------|
@@ -168,3 +168,5 @@ module.exports = ic = {
 ```
 The parameter <code>ic</code> is the injected initialization parameter object.<br>
 Webpack configuration items can be set based on <code>ic</code>
+## Npm
+[link](https://www.npmjs.com/package/@manpacker/generator)
