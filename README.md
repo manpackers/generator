@@ -41,7 +41,6 @@ npm i @manpacker/generator -D
 ## API
 ```
 const manpacker = require('@manpacker/generator')
-
 ```
 ### method
 #### .compile
