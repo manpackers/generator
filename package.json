@@ -1,0 +1,77 @@
+{
+  "name": "@manpacker/generator",
+  "version": "1.0.0",
+  "description": "Frontend buld project bas",
+  "main": "./bin",
+  "bin": {
+    "manpacker": "./bin/manpacker"
+  },
+  "scripts": {
+    "test:server": "node ./bin/manpacker server --ic ./test/config/manpacker.ic.js --config ./test/manpacker.config.js",
+    "test:build": "node ./bin/manpacker build --ic ./test/config/manpacker.ic.js --config ./test/manpacker.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manpackers/generator.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "winterfete"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manpackers/generator/issues"
+  },
+  "homepage": "https://github.com/manpackers/generator#readme",
+  "eslintConfig": {
+    "extends": [
+      "manpacker-typescript"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "manpacker"
+    ]
+  },
+  "devDependencies": {
+    "babel-preset-manpacker": "^1.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-manpacker-typescript": "^1.2.0",
+    "ts-loader": "^5.4.5",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "babel-loader": "^8.0.5",
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^4.0.0-beta.5",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "ora": "^3.4.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-url": "^8.0.0",
+    "px2rem-loader": "^0.1.9",
+    "resolve-url-loader": "^3.1.0",
+    "rimraf": "^2.6.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "style-resources-loader": "^1.2.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.30.0",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 5.0.0"
+  }
+}

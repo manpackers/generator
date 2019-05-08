@@ -1,0 +1,11 @@
+body {
+  background-color: #000;
+  height: 400px;
+  width: 600px; /*no*/
+  /* @include test-mixin; */
+  background-image: url('./img/1.jpg?v=3032');
+}
+
+.ff {
+  font-size: 32px;
+}

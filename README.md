@@ -1,0 +1,163 @@
+# Explain
+Manpacker is a set of build engine based on [webpack](https://www.webpackjs.com/) to build engine package.<br>
+Entry file supported file extension <code>js</code> or <code>ts</code><br>
+Support for multi-portal file build, Files must be in the build <code>root</code> directory.<br>
+## .manpackeric
+Project default initialization file, Can be a <code>javascript</code> script file, or a <code>json</code> configuration file.<br>
+Example: json<br>
+```
+{"output": "view"}
+```
+You can also set the <code>manpacker</code> field in the <code>package.json</code> file.<br>
+Example:<br>
+```
+{"manpacker": {"root": "src"}}
+```
+Final input result, Merge <code>.manpackeric</code> config item.
+```
+{"root": "src", "output": "view"}
+```
+You can customize the project initialization file name.<br>
+Example:<br>
+Custom name: development.ic.js
+```
+npx manpacker --ci development.ic.js
+```
+```
+manpacker --ci development.ic.js
+```
+# Install
+```
+npm i @manpacker/frontend -D
+```
+# Usage
+## API
+```
+const manpacker = require('@manpacker/frontend')
+
+```
+### method
+#### .compile
+Core compilation method
+```
+const { compile } = require('@manpacker/frontend')
+compile({ env, ic, config })
+```
+
+|param|type|explain|
+|-----|----|-------|
+|env|string|<code>env: NDOE_ENV variabl</code>|
+|ic|object|<code>.manpackeric</code> config item object|
+|config|function|<code>mnapacker.config.js</code> return funtion|
+
+#### .Commander
+Commander is Create command-line class.
+```
+const { Commander } = require('@manpacker/frontend')
+
+let { version } = require('./package.json')
+let commander = new Commander({ version })
+
+```
+Explain commander methods
+|method|explain|
+|------|-------|
+|build|Default build production environment, enter project directory|
+|server|Launch Development Environment, Local Interconnect Service, default Port 8090|
+|parse|Compile registration command Lint|
+#### .createCssLoader
+Create css loader generator.
+```
+const { createCssLoader } = require('@manpacker/frontend')
+```
+|param|type|explain|
+|-----|----|-------|
+|ic|object|code>.manpackeric</code> config item object|
+|...loader|[object,string]|style loader|
+
+Example:
+```
+createCssLoader(ic, { loader: 'resolve-url-loader' }, { loader: 'sass-loader' })
+```
+```
+createCssLoader(ic, 'resolve-url-loader', 'sass-loader')
+```
+#### .createURILoader
+Create URI file loader generator.
+
+|param|teype|explain|
+|-----|-----|-------|
+|dir|string|create new dir for URI file.|
+d
+## .manpackeric
+Default root file name: <code>.manpackeric</code><br>
+Configuration item description:<br>
+
+|name|type|value|description|
+|----|----|-----|-----------|
+|root|string|default: src| Source directory for building the project|
+|output|string|default: view|Directory output after build|
+|ext|string|default:htm|Extension of the outputted page|
+|cdn|string|default: "/"|Domain name for static Resource, "publicPath" attribute value|
+|define|object|dedalut: {NODE_ENV: process.env.NODE_ENV}|Define constants in a project, <code>eslintrc</code> set global key-value|
+|pages|object|default: {}|Multi-portal file page configuration [Example](#pages)|
+|remUnit|number|default: 100|Conversion of <code>px</code> with <code>750px</code> Design Diagram, Minimum cardinality.|
+|isPx2rem|boolean|default:true|Pixel unit <code>px</code> conversion <code>rem</code>|
+|injectStyle|array|default:[]|Global style files that need to be injected, Avoid repeating reference, [Example](#injectStyle)|
+|isMergeCommon|boolean|default:false|When multiple portal files are used, the common code section is extracted|
+|minChunks|number|default: 2|If <code>isMergeCommon:true</code>, Extracts the minimum entry file number of files for the public code.|
+|isCssModule|boolean|default:false|Whether styles are introduced as css templates, [Example](#isCssModule)|
+|isMiniHTML|boolean|default:true|Compressed page.|
+|template|string|default:'template.html'|Build-time template file.|
+|map|string|default: ' '|Source map file URI|
+
+### .pages
+Ingress File header Settin.
+Example:
+Entry files <code>index.js</code>
+```
+{"page": {"index": "Test title"}}
+```
+More entry files <code>index.ts</code>、<code>list.ts</code>, and so on.
+```
+{"pages": {"index": "Test title", "list": "List test title"}}
+```
+
+### .injectStyle
+Inject global style file, Avoid manual introduction<br>
+Example:
+```
+{"injectStyle": ["./common/style/mixins.scss", "./common/style/varable.scss"]}
+```
+```
+{"injectStyle": ["./common/style/index.scss"]}
+```
+### .isCssModule
+Introduction of css style to work with Modular approach.<br>
+Example: <br>
+index.scss
+```
+.frame {margin: auto;}
+```
+index.jsx
+```
+import Style from './index.scss'
+
+<div class={Style.frame}></div>
+```
+## postcss.config.js
+Specific reference: [postcss](https://www.npmjs.com/package/postcss)
+
+This generator includes plugins: <code>postcss-preset-env</code> <code>postcss-import</code> <code>postcss-url</code> <code>cssnano</code><br>
+Extend the postcss plug-in the root directory: create file <code>postcss.config.js</code>
+
+## manpacker.config.js
+Default root file name: <code>manpacker.config.js</code>
+```
+module.exports = ic = {
+  // webpack config item.
+  return {}
+}
+```
+The parameter <code>ic</code> is the injected initialization parameter object.<br>
+Webpack configuration items can be set based on <code>ic</code>

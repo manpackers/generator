@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const { Commander } = require('../lib')
+const { version } = require('../package.json')
+const commander = new Commander({ version })
+const { compile } = require('../lib')
+
+commander.build().then(({ ic, config }) => compile({ env: 'production', ic, config }))
+commander.server().then(({ ic, config }) => compile({ ic, config }))
+commander.parse()

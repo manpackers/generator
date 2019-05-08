@@ -1,0 +1,5 @@
+language: node_js
+nodes_js:
+  - "10"
+isntall: true
+script: true
