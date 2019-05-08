@@ -1,3 +1,10 @@
+![npm](https://img.shields.io/npm/v/@manpacker/generator.svg)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@manpacker/generator.svg)
+![npm](https://img.shields.io/npm/dw/@manpacker/generator.svg)
+![NPM](https://img.shields.io/npm/l/@manpacker/generator.svg)
+<br><br>
+![nodei.co](https://nodei.co/npm/@manpacker/generator.png?downloads=true&downloadRank=true&stars=true)
+<br>
 # Explain
 Manpacker is a set of build engine based on [webpack](https://www.webpackjs.com/) to build engine package.<br>
 Entry file supported file extension <code>js</code> or <code>ts</code><br>
