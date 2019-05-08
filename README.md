@@ -66,6 +66,7 @@ let commander = new Commander({ version })
 
 ```
 Explain commander methods
+
 |method|explain|
 |------|-------|
 |build|Default build production environment, enter project directory|
@@ -94,7 +95,7 @@ Create URI file loader generator.
 |param|teype|explain|
 |-----|-----|-------|
 |dir|string|create new dir for URI file.|
-d
+
 ## .manpackeric
 Default root file name: <code>.manpackeric</code><br>
 Configuration item description:<br>
