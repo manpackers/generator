@@ -14,7 +14,12 @@
     "type": "git",
     "url": "git+https://github.com/manpackers/generator.git"
   },
-  "keywords": [],
+  "keywords": [
+    "webpack",
+    "manpacker",
+    "generator",
+    "build"
+  ],
   "author": {
     "name": "winterfete"
   },
