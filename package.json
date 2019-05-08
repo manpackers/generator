@@ -1,6 +1,6 @@
 {
   "name": "@manpacker/generator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Frontend buld project bas",
   "main": "./bin",
   "bin": {
