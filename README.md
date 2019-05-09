@@ -38,6 +38,21 @@ manpacker --ci development.ic.js
 npm i @manpacker/generator -D
 ```
 # Usage
+## CLI
+Start the local development environment.
+```
+manpacker server
+```
+```
+manpacker server --ic [value] -c [config] --port [number]
+```
+Construction of production environment engineering project.
+```
+manpacker build
+```
+```
+manpacker build --ic [value] -c [config]
+```
 ## API
 ```
 const manpacker = require('@manpacker/generator')
@@ -53,8 +68,8 @@ compile({ env, ic, config })
 |param|type|explain|
 |-----|----|-------|
 |env|string|<code>env: NDOE_ENV variabl</code>|
-|ic|object|<code>.manpackeric</code> config item object|
-|config|function|<code>mnapacker.config.js</code> return funtion|
+|ic|object|<code>[.manpackeric](#.manpackeric)</code> config item object|
+|config|function|<code>[manpacker.config.js](#manpacker.config.js)</code> return funtion|
 
 #### .Commander
 Commander is Create command-line class.
@@ -96,6 +111,13 @@ Create URI file loader generator.
 |-----|-----|-------|
 |dir|string|create new dir for URI file.|
 
+#### .createEslintLoader
+Create Eslint loader generator.
+
+|param|teype|explain|
+|-----|-----|-------|
+|rgx|RegExp|Create eslint loader.|
+
 ## .manpackeric
 Default root file name: <code>.manpackeric</code><br>
 Configuration item description:<br>
@@ -117,6 +139,7 @@ Configuration item description:<br>
 |isMiniHTML|boolean|default:true|Compressed page.|
 |template|string|default:'template.html'|Build-time template file.|
 |map|string|default: ' '|Source map file URI|
+|isEslint|boolean|default: true|Start the eslint-loader feature by default|
 
 ### .pages
 Ingress File header Settin.
