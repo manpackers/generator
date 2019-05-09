@@ -53,8 +53,8 @@ compile({ env, ic, config })
 |param|type|explain|
 |-----|----|-------|
 |env|string|<code>env: NDOE_ENV variabl</code>|
-|ic|object|<code>.manpackeric</code> config item object|
-|config|function|<code>mnapacker.config.js</code> return funtion|
+|ic|object|<code>[.manpackeric](#.manpackeric)</code> config item object|
+|config|function|<code>[manpacker.config.js](#manpacker.config.js)</code> return funtion|
 
 #### .Commander
 Commander is Create command-line class.
