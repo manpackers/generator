@@ -38,6 +38,21 @@ manpacker --ci development.ic.js
 npm i @manpacker/generator -D
 ```
 # Usage
+## CLI
+Start the local development environment.
+```
+manpacker-vue server
+```
+```
+manpacker-vue server --ic [value] -c [config] --port [number]
+```
+Construction of production environment engineering project.
+```
+manpacker-vue build
+```
+```
+manpacker-vue build --ic [value] -c [config]
+```
 ## API
 ```
 const manpacker = require('@manpacker/generator')
