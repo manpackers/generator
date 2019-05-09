@@ -41,17 +41,17 @@ npm i @manpacker/generator -D
 ## CLI
 Start the local development environment.
 ```
-manpacker-vue server
+manpacker server
 ```
 ```
-manpacker-vue server --ic [value] -c [config] --port [number]
+manpacker server --ic [value] -c [config] --port [number]
 ```
 Construction of production environment engineering project.
 ```
-manpacker-vue build
+manpacker build
 ```
 ```
-manpacker-vue build --ic [value] -c [config]
+manpacker build --ic [value] -c [config]
 ```
 ## API
 ```
