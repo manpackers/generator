@@ -1,7 +1,7 @@
 import tool from '@/utils/tool'
 import Index from '@/pages/Index'
 
-tool.getQueryString()
+// tool.getQueryString()
 
 console.log(Index)
 

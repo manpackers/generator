@@ -111,6 +111,13 @@ Create URI file loader generator.
 |-----|-----|-------|
 |dir|string|create new dir for URI file.|
 
+#### .createEslintLoader
+Create Eslint loader generator.
+
+|param|teype|explain|
+|-----|-----|-------|
+|rgx|RegExp|Create eslint loader.|
+
 ## .manpackeric
 Default root file name: <code>.manpackeric</code><br>
 Configuration item description:<br>
@@ -132,6 +139,7 @@ Configuration item description:<br>
 |isMiniHTML|boolean|default:true|Compressed page.|
 |template|string|default:'template.html'|Build-time template file.|
 |map|string|default: ' '|Source map file URI|
+|isEslint|boolean|default: true|Start the eslint-loader feature by default|
 
 ### .pages
 Ingress File header Settin.
