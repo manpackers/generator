@@ -1,4 +1,8 @@
 module.exports = () => ({
+  output: {
+    library: 'TestArticle'
+  },
+
   module: {
     rules: [{
       test: /\.tsx?$/,

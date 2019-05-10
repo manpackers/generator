@@ -8,7 +8,9 @@ const format = (pattern = 'yyyy-mm-dd') => {
 
   try {
     return [
-      dater.getFullYear(), (month > 10 ? month : `0${month}`), date > 10 ? date : `0${date}`
+      dater.getFullYear(),
+      month < 10 ? `0${month}` : month,
+      date < 10 ? `0${date}` : date
     ].join(
       pattern.match(/^(y{4})([^ymd])*(m{2})\2(d{2})$/).splice(2, 1)
     )
