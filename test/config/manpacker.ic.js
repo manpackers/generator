@@ -4,7 +4,8 @@ module.exports = {
   isCssExtract: true,
   isCssModule: false,
   isMergeCommon: true,
-  isEslint: false
+  isEslint: false,
+  template: './test/template.html'
   // cdn: 'https://www.test.cn/cdn/',
   // map: 'https://www.test.cn/map/'
 }

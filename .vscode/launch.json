@@ -13,7 +13,7 @@
     "args": [
       "build",
       "--ic", "./test/config/manpacker.ic.js",
-      "--config", "./test/manpacker.config.js"
+      "--config", "./test/manpacker.webpack.js"
     ],
     "cwd": "${workspaceRoot}"
   },
@@ -26,7 +26,7 @@
     "args": [
       "server",
       "--ic", "./test/config/manpacker.ic.js",
-      "--config", "./test/manpacker.config.js"
+      "--config", "./test/manpacker.webpack.js"
     ],
     "cwd": "${workspaceRoot}"
   }]
