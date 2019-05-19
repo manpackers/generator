@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const rimraf = require('rimraf')
+const zipper = require('zip-local')
 
 /**
  * Parse file's content for object.
@@ -62,4 +63,16 @@ async function remove(rf) {
   return await new Promise((resolve, reject) => rf ? rimraf(rf, () => resolve()) : reject(rf))
 }
 
-module.exports = { parse, exec, search, remove }
+// Zip
+async function zip(source, name = 'native') {
+  let zipped = await new Promise((resolve, reject) => (
+    zipper.zip(path.join(source), (err, zipped) => err ? reject(err) : resolve(zipped))
+  ))
+
+  await remove(source)
+  await fs.mkdirSync(source)
+  zipped.compress().save(path.join(source, `${name}.zip`))
+  return source
+}
+
+module.exports = { parse, exec, search, remove, zip }

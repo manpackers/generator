@@ -140,6 +140,7 @@ Configuration item description:<br>
 |template|string|default:'template.html'|Build-time template file.|
 |map|string|default: ' '|Source map file URI|
 |isEslint|boolean|default: true|Start the eslint-loader feature by default|
+|isZip|boolean|default: false|Compressed project are zip’s ext. |
 
 ### .pages
 Ingress File header Settin.
