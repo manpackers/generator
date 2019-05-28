@@ -133,6 +133,7 @@ Configuration item description:<br>
 |remUnit|number|default: 100|Conversion of <code>px</code> with <code>750px</code> Design Diagram, Minimum cardinality.|
 |isPx2rem|boolean|default:true|Pixel unit <code>px</code> conversion <code>rem</code>|
 |injectStyle|array|default:[]|Global style files that need to be injected, Avoid repeating reference, [Example](#injectStyle)|
+|isCssExtract|boolean|default: fasle|Extract css separate files|
 |isMergeCommon|boolean|default:false|When multiple portal files are used, the common code section is extracted|
 |minChunks|number|default: 2|If <code>isMergeCommon:true</code>, Extracts the minimum entry file number of files for the public code.|
 |isCssModule|boolean|default:false|Whether styles are introduced as css templates, [Example](#isCssModule)|
