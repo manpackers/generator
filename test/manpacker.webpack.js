@@ -1,7 +1,10 @@
+const path = require('path')
+
 module.exports = () => ({
-  output: {
-    // library: 'Test'
-  },
+  // output: {
+  // library: 'Test'
+  // path: path.join(__dirname, './view/test1')
+  // },
 
   module: {
     rules: [{
