@@ -206,7 +206,7 @@ Extend the postcss plug-in the root directory: create file <code>postcss.config.
 ## manpacker.webpack.js
 Default root file name: <code>manpacker.webpack.js</code>
 ```
-module.exports = ic = {
+module.exports = ic => {
   // webpack config item.
   return {}
 }
