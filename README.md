@@ -142,6 +142,7 @@ Configuration item description:<br>
 |map|string|default: ' '|Source map file URI|
 |isEslint|boolean|default: true|Start the eslint-loader feature by default|
 |isZip|boolean|default: false|Compressed project are zip’s ext. |
+|proxy|object|default: {}|Resolve browser request interface joint cross-domain. |
 
 ### .pages
 Ingress File header Settin.
@@ -177,6 +178,25 @@ import Style from './index.scss'
 
 <div class={Style.frame}></div>
 ```
+### .proxy
+
+```
+{
+  '/api': {
+    'target': 'https://maindomain.com',
+    'changeOrigin': true,
+    'secure': true,
+    'pathRewrite': {
+      '^/api': ''
+    },
+    'logLevel': 'debug'
+  }
+}
+```
+```
+API: http://localhost:8090/api/home => https://maindomain.com/home
+```
+
 ## postcss.config.js
 Specific reference: [postcss](https://www.npmjs.com/package/postcss)
 

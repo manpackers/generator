@@ -38,6 +38,9 @@
       "manpacker"
     ]
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "babel-preset-manpacker": "^1.1.1",
     "eslint": "^5.16.0",
