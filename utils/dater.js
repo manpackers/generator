@@ -1,19 +1,18 @@
-const dater = new Date()
 /**
- *
+ * 格式化时间 默认格式: YYYY-MM-DD HH:mm
  */
-const format = (pattern = 'yyyy-mm-dd') => {
+const format = (time, pattern = 'YYYY-MM-DD HH:mm') => {
+  let dater = new Date(time)
+  let year = dater.getFullYear()
   let month = dater.getMonth() + 1
-  let date = dater.getDate()
+  let day = dater.getDate()
+  let hour = dater.getHours()
+  let minute = dater.getMinutes()
 
-  try {
-    return [
-      dater.getFullYear(),
-      month < 10 ? `0${month}` : month,
-      date < 10 ? `0${date}` : date
-    ].join(
-      pattern.match(/^(y{4})([^ymd])*(m{2})\2(d{2})$/).splice(2, 1)
-    )
-  } catch (err) { console.warn('Example: yyyy-mm-dd or yyyy/mm/dd') }
+  return pattern.replace('YYYY', year)
+    .replace('MM', month < 10 ? `0${month}` : month)
+    .replace('DD', day < 10 ? `0${day}` : day)
+    .replace('HH', hour < 10 ? `0${hour}` : hour)
+    .replace('mm', minute < 10 ? `0${minute}` : minute)
 }
 module.exports = { format }

@@ -6,7 +6,11 @@ module.exports = {
   isMergeCommon: true,
   isEslint: false,
   template: './test/template.html',
-  isZip: true
+  isZip: true,
+
+  port: 10001,
+
+  devRouter: '/test'
   // cdn: 'https://www.test.cn/cdn/',
   // map: 'https://www.test.cn/map/'
 }
